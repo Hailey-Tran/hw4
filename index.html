@@ -3,7 +3,6 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="/styles/sitestyle.css">
-        <script src="app.js"></script>
         <title>Hailey's Portfolio</title>
     </head>
 
@@ -14,6 +13,8 @@
         <h3 id="logo">Hailey Tran</h3>
         -->
         <!--Navigation-->
+        <img src="/images/moon.png" id="icon">
+
         <nav class="nav">
             <ul class="nav-ul">
                 <li><a href="pages/about.html">About Me</a></li>
@@ -21,7 +22,7 @@
                 <li><a href="https://www.linkedin.com/in/haileymtran/">LinkedIn</a></li>
                 <li><a href="pages/experiments.html">Experiments</a></li>
             </ul>
-             
+            
         </nav>
     </header>
 
@@ -45,6 +46,18 @@
             
         </section>
     </main>
+
+    <script>
+        var icon = document.getElementById("icon");
+        icon.onclick = function() {
+            document.body.classList.toggle("dark-theme");
+            if (document.body.classList.contains("dark-theme")) {
+                icon.src = "/images/sun.png";
+            } else {
+                icon.src = "/images/moon.png";
+            }
+        }
+    </script>
 
     <section id="footer">
         <footer>

@@ -1,12 +1,22 @@
 * {
     font-family: Raleway, Arial, Helvetica, sans-serif;
-    --bg-color: white;
+    --bg-color: var(--prim-color);
+    --second-color: var(--sec-color);
     --bg-second-color: #bfa194;
     --link-hover-color: #de5a5a;
     --main-color: #f8a147;
     --border-color: #028a9b;
     --text-color: grey;
     --pop-color: #bf3f76;
+}
+
+:root {
+    --prim-color: white;
+    --sec-color: #212121;
+}
+.dark-theme {
+    --prim-color: #212121;
+    --sec-color: var(--bg-color);
 }
 
 @font-face {
@@ -17,6 +27,8 @@
 html, body {
     margin: 0;
     padding: 0;
+    background-color: var(--prim-color);
+
   }
 
 /* Portrait and Landscape */
@@ -85,6 +97,12 @@ html, body {
 
 */
 
+#icon {
+    width: 30px;
+    cursor: pointer;
+    float: right
+}
+
 .nav {
     background-color: var(--bg-color);
     float: right;
@@ -98,6 +116,11 @@ html, body {
     display: inline-block;
     padding: 0px 20px;
     
+}
+
+.nav ul{
+    flex: 1;
+    text-align: right;
 }
 
 .nav-ul li a {
@@ -407,11 +430,10 @@ form {
 
 #footer a {
     text-decoration: none;
-    color: var(--main-color)
 }
 
 #footer a:hover {
-    color: var(--link-hover-color)
+    color: var(--link-hover-color);
 }
 
 

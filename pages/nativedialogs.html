@@ -4,10 +4,12 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="/styles/sitestyle.css">
         <script src="app.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.10/purify.min.js"></script>
         <title>Hailey's Portfolio</title>
     </head>
 
     <body>
+        <main>
         <button type="button" id="alertButton">Alert</button> <br>
 
         <button type="button" id="confirmButton">Confirm</button> <br>
@@ -19,15 +21,15 @@
         <button type="button" id="saferPromptButton">Safer Prompt</button>
 
         <script>
-            src = "https://github.com/cure53/DOMPurify";
+            const clean = DOMPurify.sanitize(dirty);
 
             const ab = document.getElementById("alertButton");
-            ab.addEventListener("click", function() {
+            ab.addEventListener("click", () => {
                 alert("This is the alert button");
             });
 
             const cb = document.getElementById("confirmButton");
-            cb.addEventListener("click", function() {
+            cb.addEventListener("click", () => {
                 //confirm("This is the confirm button");
                 let text = "This is the confirm button";
                 if (confirm(text) == true) {
@@ -39,7 +41,7 @@
             });
 
             const pb = document.getElementById("promptButton");
-            pb.addEventListener("click", function() {
+            pb.addEventListener("click", () => {
                 let negative = `User didn't type in anything`;
                 //let negativeMessage = `${negative}`;
 
@@ -55,7 +57,7 @@
             });
 
             const spb = document.getElementById("saferPromptButton");
-            spb.addEventListener("click", function() {
+            spb.addEventListener("click", () => {
                 let safeNegative = `User didn't type in anything`;
                 let safeMessage =  prompt("This is the safer prompt button");
 
@@ -69,5 +71,6 @@
                 }
             });
         </script>
+        </main>
     </body>
 
